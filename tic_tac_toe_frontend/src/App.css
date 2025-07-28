@@ -1,0 +1,147 @@
+:root {
+  --primary: #1976D2;
+  --secondary: #424242;
+  --accent: #FFD600;
+  --border: #e0e0e0;
+  --bg: #fff;
+  --bg-light: #f9f9fa;
+  --text-main: #212121;
+  --text-light: #666;
+}
+
+body, html, #root {
+  min-height: 100vh;
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+}
+
+.ttt-app-bg {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text-main);
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ttt-center-wrapper {
+  max-width: 360px;
+  margin: 60px auto 32px auto;
+  padding: 24px 16px 32px 16px;
+  background: var(--bg-light);
+  border-radius: 18px;
+  box-shadow: 0 2px 28px 0 rgba(25, 118, 210, 0.05), 0 0.5px 1px var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ttt-title {
+  margin: 0 0 14px 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--primary);
+  text-shadow: 0 1px 0 #fff, 0 2px 4px #e3e3e3;
+}
+
+.ttt-status {
+  margin-bottom: 18px;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--secondary);
+  letter-spacing: 0.5px;
+}
+
+.ttt-winner, .ttt-draw {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.ttt-board {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 24px;
+}
+.ttt-row {
+  display: flex;
+  gap: 2px;
+}
+.ttt-cell {
+  width: 64px;
+  height: 64px;
+  font-size: 2rem;
+  font-weight: 650;
+  color: var(--primary);
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 9px;
+  outline: none;
+  transition: background 0.2s cubic-bezier(.4,0,.2,1), color 0.1s;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+.ttt-cell:disabled,
+.ttt-cell[disabled] {
+  background: #f3f4f6;
+  color: #929292;
+  cursor: not-allowed;
+}
+
+/* Reset Button */
+.ttt-reset-btn {
+  margin-top: 8px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 30px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 1.5px 4px rgba(0,0,0,.052);
+  transition: background 0.18s;
+}
+.ttt-reset-btn:hover,
+.ttt-reset-btn:focus {
+  background: #125faa;
+  outline: none;
+}
+
+.ttt-footer {
+  margin: auto 0 15px 0;
+  text-align: center;
+  font-size: 0.97rem;
+  color: var(--text-light);
+  letter-spacing: 0.2px;
+  opacity: 0.8;
+}
+
+/* Responsive design for mobile and smaller screens */
+@media (max-width: 430px) {
+  .ttt-center-wrapper {
+    max-width: 98vw;
+    min-width: 0;
+    padding: 11vw 2vw 5vw 2vw;
+  }
+  .ttt-title {
+    font-size: 1.3rem;
+  }
+  .ttt-cell {
+    width: 18vw;
+    height: 18vw;
+    min-width: 48px;
+    min-height: 48px;
+    max-width: 78px;
+    max-height: 78px;
+    font-size: 1.28rem;
+  }
+}
